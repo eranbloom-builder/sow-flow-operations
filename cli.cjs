@@ -1,0 +1,1 @@
+const fs=require('node:fs');const SOW=require('./core.js');const data=JSON.parse(fs.readFileSync(process.argv[2]||'sample.json','utf8'));const s=SOW.create(data,1);fs.writeFileSync('sample-sow.docx',SOW.docx(s));console.log('Generated sample-sow.docx; approval route: '+s.route.join(' → '));
